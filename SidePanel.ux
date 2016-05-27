@@ -1,11 +1,42 @@
 <DockPanel ux:InnerClass="SidePanel" ux:Name="sidePanel" Background="#303C4C" Width="85%">
   <WhileInactive Threshold="0.4">
     <Move Target="sidebarTitle"  Easing="CircularIn" />
+    <Move Target="showMenuList"  Easing="CircularIn" />
+
   </WhileInactive>
 
   <StackPanel ux:Name="sidebarTitle" Dock="Top" Margin="20, 50, 20, 20">
     <Text  FontSize="16" TextAlignment="Center" TextColor="#fff" Value="Menu" />
 </StackPanel>
+
+<ScrollView ux:Name="showMenuList" Dock="Fill" Padding="0, 0, 0, 15">
+    <StackPanel>
+      <Each Items="{menuList}">
+        <Panel Alignment="Top" Margin="20, 0, 0, 0" Height="48" Background="#303C4C">
+          <StackPanel Alignment="CenterLeft" Margin="35, 0, 0, 0" Width="100%">
+            <Clicked>
+            </Clicked>
+            
+            <Text TextColor="#fff" FontSize="14" Value="{menuName}" />
+          </StackPanel>
+
+          <Rectangle Alignment="Bottom" Height="1" Fill="#FFF" Opacity=".1" />
+          
+          <RemovingAnimation>
+            <Move RelativeTo="Size" Y="-1" Duration=".2" Easing="CircularInOut" />
+          </RemovingAnimation>
+
+          <LayoutAnimation>
+            <Move RelativeTo="LayoutChange" Y="1" Duration=".5" Easing="CircularInOut" />
+          </LayoutAnimation>
+        </Panel>
+      </Each>
+    </StackPanel>
+  </ScrollView>
+
+
+
+
 
   <Panel Dock="Bottom" Background="#232C39" Height="50">
     <Text  FontSize="12" TextColor="#fff" TextAlignment="Center" Alignment="VerticalCenter" Value="Developed by SyntagApps v 0.1" />

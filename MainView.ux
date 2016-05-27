@@ -1,4 +1,5 @@
 <App Theme="Basic" Background="#fff">
+  <JavaScript File="Main.js" />
   <ux:Include File="SidePanel.ux" />
 
   <iOS.StatusBarConfig Style="Light" />
