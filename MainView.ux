@@ -1,0 +1,70 @@
+<App Theme="Basic" Background="#fff">
+  <ux:Include File="SidePanel.ux" />
+
+  <iOS.StatusBarConfig Style="Light" />
+
+  <DockPanel>
+    <EdgeNavigation ux:Name="Navigator" />
+    
+    <!-- SIDE PANEL -->
+    <SidePanel ux:Name="sidePanel" Edge="Left" Alignment="Left">
+      <EnteringAnimation>
+        <Move X="-1" RelativeTo="Size" />
+      </EnteringAnimation>
+
+      <ActivatingAnimation>
+        <Change Duration="0.1" Easing="Linear" mainAppTranslation.X=".85" />
+      </ActivatingAnimation>
+    </SidePanel>
+
+
+
+
+
+    <!-- MAIN PANEL -->
+    <DockPanel ux:Name="MainPanel">
+      <Translation ux:Name="mainAppTranslation" RelativeTo="Size" />
+
+      <DeactivatingAnimation>
+        <Change MainViewOverlay.Opacity=".7" Duration=".2" Easing="Linear" />
+        <Change MainPanel.HitTestMode="LocalBounds" />
+
+        <WhilePressed>
+          <NavigateToggle />
+        </WhilePressed>
+      </DeactivatingAnimation>
+      
+      <Rectangle ux:Name="MainViewOverlay" Fill="#303C4C" Layer="Overlay" Opacity="0" HitTestMode="Children" />
+
+    <Panel Background="#F0EBEB" Padding="0, 0, 0, 0" Opacity="1">
+        <Panel Alignment="Top" Background="#FF1600" Height="43" Opacity="0.8">
+
+          <Panel Width="45" Alignment="CenterLeft" Margin="0, 0, 0, 0" Padding="0" HitTestMode="LocalBoundsAndChildren">
+            <StackPanel Alignment="Center">
+              <Rectangle Height="2" Width="18" Fill="#fff">
+              </Rectangle>
+              <Rectangle Height="2" Width="18" Fill="#fff" Margin="0, 5, 0, 0">
+              </Rectangle>
+              <Rectangle Height="2" Width="18" Fill="#fff" Margin="0,5,0,0">
+              </Rectangle>
+            </StackPanel>
+
+            <Rectangle Fill="#fff" Width="1" Height="43" Opacity=".1" Alignment="Right" />
+
+            <Rectangle Fill="#fff" Opacity=".1" />
+
+            <Clicked>
+              <Set Navigator.Active="sidePanel" />
+            </Clicked>
+          </Panel>
+
+  
+        </Panel>
+      </Panel>
+
+
+
+      <BottomBarBackground Dock="Bottom" IncludesKeyboard="false" />
+    </DockPanel>
+  </DockPanel>
+</App>

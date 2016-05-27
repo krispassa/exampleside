@@ -1,0 +1,13 @@
+<DockPanel ux:InnerClass="SidePanel" ux:Name="sidePanel" Background="#303C4C" Width="85%">
+  <WhileInactive Threshold="0.4">
+    <Move Target="sidebarTitle"  Easing="CircularIn" />
+  </WhileInactive>
+
+  <StackPanel ux:Name="sidebarTitle" Dock="Top" Margin="20, 50, 20, 20">
+    <Text  FontSize="16" TextAlignment="Center" TextColor="#fff" Value="Menu" />
+</StackPanel>
+
+  <Panel Dock="Bottom" Background="#232C39" Height="50">
+    <Text  FontSize="12" TextColor="#fff" TextAlignment="Center" Alignment="VerticalCenter" Value="Developed by SyntagApps v 0.1" />
+  </Panel>
+</DockPanel>
