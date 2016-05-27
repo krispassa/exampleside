@@ -37,7 +37,7 @@
       
       <Rectangle ux:Name="MainViewOverlay" Fill="#303C4C" Layer="Overlay" Opacity="0" HitTestMode="Children" />
 
-    <Panel Background="#F0EBEB" Padding="0, 0, 0, 0" Opacity="1">
+    <Panel Background="#F0EBEB" Padding="0, 20, 0, 0" Opacity="1">
         <Panel Alignment="Top" Background="#FF1600" Height="43" Opacity="0.8">
 
           <Panel Width="45" Alignment="CenterLeft" Margin="0, 0, 0, 0" Padding="0" HitTestMode="LocalBoundsAndChildren">
@@ -50,7 +50,7 @@
               </Rectangle>
             </StackPanel>
 
-            <Rectangle Fill="#fff" Width="1" Height="43" Opacity=".1" Alignment="Right" />
+            <Rectangle Fill="#fff" Width="1" Height="43" Padding="0, 20, 0, 0" Opacity=".1" Alignment="Right" />
 
             <Rectangle Fill="#fff" Opacity=".1" />
 

@@ -1,0 +1,3 @@
+<Panel ux:Class="AdminView">
+	<Text Value="AdminView"/>
+</Panel>
